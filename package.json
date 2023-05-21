@@ -7,7 +7,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --detectOpenHandles",
     "ci": "jest --json --runInBand | node .github/workflows/parseOutput.js",
     "tdd": "jest --watch --runInBand",
     "start": "node index.js"
@@ -21,7 +21,9 @@
       "/node_modules/"
     ],
     "preset": "@shelf/jest-mongodb",
-    "watchPathIgnorePatterns": ["globalConfig"]
+    "watchPathIgnorePatterns": [
+      "globalConfig"
+    ]
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
